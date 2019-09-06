@@ -1,0 +1,95 @@
+{
+  "name": "@primecms/core",
+  "version": "0.3.4-beta.1",
+  "description": "The core Prime CMS Engine",
+  "author": "Birkir Gudjonsson <birkir.gudjonsson@gmail.com>",
+  "homepage": "https://github.com/birkir/prime",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/__tests__/utils"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/__tests__/utils"
+    ],
+    "setupFiles": ["dotenv/config"]
+  },
+  "scripts": {
+    "clean": "rimraf lib",
+    "start": "node lib/index.js",
+    "prepublishOnly": "yarn compile",
+    "compile": "rimraf lib && tsc -p .",
+    "dev": "cross-env DEBUG=prime* ts-node-dev --no-notify --transpileOnly src",
+    "dev:debug": "cross-env DEBUG=prime:*,typeorm:* ts-node-dev --no-notify --transpileOnly --inspect -- src",
+    "testonly": "jest --runInBand",
+    "test:watch": "jest --watch",
+    "coverage": "yarn testonly --coverage"
+  },
+  "dependencies": {
+    "@accounts/database-manager": "0.15.0",
+    "@accounts/graphql-api": "0.15.0",
+    "@accounts/password": "0.15.0",
+    "@accounts/server": "0.15.0",
+    "@accounts/typeorm": "0.15.0",
+    "@casl/ability": "3.2.0",
+    "@graphql-modules/core": "0.7.5",
+    "@primecms/field": "^0.3.4-beta.1",
+    "@primecms/field-asset": "^0.3.4-beta.1",
+    "@primecms/field-boolean": "^0.3.4-beta.1",
+    "@primecms/field-datetime": "^0.3.4-beta.1",
+    "@primecms/field-document": "^0.3.4-beta.1",
+    "@primecms/field-group": "^0.3.4-beta.1",
+    "@primecms/field-number": "^0.3.4-beta.1",
+    "@primecms/field-select": "^0.3.4-beta.1",
+    "@primecms/field-slice": "^0.3.4-beta.1",
+    "@primecms/field-string": "^0.3.4-beta.1",
+    "apollo-server-express": "2.8.1",
+    "class-validator": "0.9.1",
+    "cors": "2.8.5",
+    "dataloader": "1.4.0",
+    "debug": "4.1.1",
+    "dotenv": "6.2.0",
+    "express": "4.16.4",
+    "graphql": "^14.1.1",
+    "graphql-iso-date": "3.6.1",
+    "graphql-type-json": "^0.2.1",
+    "hashids": "1.2.2",
+    "isomorphic-fetch": "^2.1.1",
+    "latest": "0.2.0",
+    "lodash": "^4.17.11",
+    "mailgun-js": "0.22.0",
+    "pg": "7.8.0",
+    "rc": "1.2.8",
+    "read-pkg": "4.0.1",
+    "reflect-metadata": "0.1.13",
+    "sofa-api": "0.2.3-alpha.0",
+    "type-graphql": "0.17.0-beta.3",
+    "typedi": "0.8.0",
+    "typeorm": "0.2.18",
+    "typeorm-cursor-connection": "0.5.2",
+    "typeorm-loader": "0.0.1-0.5",
+    "typeorm-typedi-extensions": "0.2.3",
+    "which-pm": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/debug": "4.1.5",
+    "@types/graphql": "14.2.3",
+    "@types/lodash": "4.14.138",
+    "@types/rc": "1.1.0",
+    "cross-env": "5.2.1",
+    "ts-node": "8.3.0",
+    "ts-node-dev": "1.0.0-pre.39"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "f00baf08a686c40cd5cc34fa4facdacf605b7e0c"
+}
