@@ -55,7 +55,7 @@
     "class-validator": "0.9.1",
     "cors": "2.8.5",
     "dataloader": "1.4.0",
-    "debug": "4.1.1",
+    "debug": "4.3.1",
     "dotenv": "6.2.0",
     "express": "4.16.4",
     "graphql": "^14.1.1",
