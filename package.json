@@ -20,7 +20,9 @@
       "/node_modules/",
       "/__tests__/utils"
     ],
-    "setupFiles": ["dotenv/config"]
+    "setupFiles": [
+      "dotenv/config"
+    ]
   },
   "scripts": {
     "clean": "rimraf lib",
@@ -66,7 +68,7 @@
     "latest": "0.2.0",
     "lodash": "^4.17.11",
     "mailgun-js": "0.22.0",
-    "pg": "7.8.0",
+    "pg": "8.7.1",
     "rc": "1.2.8",
     "read-pkg": "4.0.1",
     "reflect-metadata": "0.1.13",
